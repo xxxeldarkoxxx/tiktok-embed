@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; justify-content: center; background: transparent; }
+</style>
+</head>
+<body>
+<blockquote class="tiktok-embed" data-video-id="" style="max-width:605px;min-width:325px;">
+  <section></section>
+</blockquote>
+<script>
+  const p = new URLSearchParams(window.location.search);
+  const user = p.get('user');
+  const id = p.get('id');
+  const bq = document.querySelector('.tiktok-embed');
+  bq.setAttribute('cite', `https://www.tiktok.com/@${user}/video/${id}`);
+  bq.setAttribute('data-video-id', id);
+</script>
+<script async src="https://www.tiktok.com/embed.js"></script>
+</body>
+</html>
